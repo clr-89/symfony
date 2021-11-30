@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="assets/images/popcorn.ico" />
+        <link rel="icon" href="{{ asset('build/images/popcorn.ico') }}" />
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
@@ -20,5 +20,8 @@
         </header>
         {% block body %}
         {% endblock %}
+    <footer class="bg-dark text-white text-center fixed-bottom">
+        {% include 'components/_footer.html.twig' %}
+    </footer>
     </body>
 </html>

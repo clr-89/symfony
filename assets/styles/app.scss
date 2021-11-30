@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css");
 
 $primary: #5A7D7C;
 $secondary: #DADFF7;
@@ -12,4 +13,8 @@ body {
 
 nav {
   background-color: $tertiary;
+}
+
+footer {
+
 }
