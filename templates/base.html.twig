@@ -14,14 +14,16 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
+
     <body>
-        <header>
-            {% include 'components/_navbar.html.twig' %}
-        </header>
+    <header>
+        {% include 'components/_navbar.html.twig' %}
+    </header>
         {% block body %}
         {% endblock %}
-    <footer class="bg-dark text-white text-center fixed-bottom">
+    <footer class="bg-dark text-white text-center">
         {% include 'components/_footer.html.twig' %}
     </footer>
     </body>
+
 </html>
