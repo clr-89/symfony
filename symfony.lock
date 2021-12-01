@@ -48,8 +48,15 @@
     "doctrine/doctrine-migrations-bundle": {
         "version": "3.2",
         "recipe": {
-            "version": "3.1"
-        }
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.1",
+            "ref": "ee609429c9ee23e22d6fa5728211768f51ed2818"
+        },
+        "files": [
+            "config/packages/doctrine_migrations.yaml",
+            "migrations/.gitignore"
+        ]
     },
     "doctrine/event-manager": {
         "version": "1.1.1"
@@ -313,8 +320,17 @@
     "symfony/phpunit-bridge": {
         "version": "5.3",
         "recipe": {
-            "version": "5.3"
-        }
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.3",
+            "ref": "97cb3dc7b0f39c7cfc4b7553504c9d7b7795de96"
+        },
+        "files": [
+            ".env.test",
+            "bin/phpunit",
+            "phpunit.xml.dist",
+            "tests/bootstrap.php"
+        ]
     },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.23.1"
@@ -371,8 +387,14 @@
     "symfony/security-bundle": {
         "version": "5.3",
         "recipe": {
-            "version": "5.3"
-        }
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.3",
+            "ref": "3307d76caa2d12fb10ade57975beb3d8975df396"
+        },
+        "files": [
+            "config/packages/security.yaml"
+        ]
     },
     "symfony/security-core": {
         "version": "v5.3.10"
@@ -401,8 +423,15 @@
     "symfony/translation": {
         "version": "5.3",
         "recipe": {
-            "version": "5.3"
-        }
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.3",
+            "ref": "da64f5a2b6d96f5dc24914517c0350a5f91dee43"
+        },
+        "files": [
+            "config/packages/translation.yaml",
+            "translations/.gitignore"
+        ]
     },
     "symfony/translation-contracts": {
         "version": "v2.4.0"
@@ -426,8 +455,15 @@
     "symfony/validator": {
         "version": "5.3",
         "recipe": {
-            "version": "4.3"
-        }
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "3eb8df139ec05414489d55b97603c5f6ca0c44cb"
+        },
+        "files": [
+            "config/packages/test/validator.yaml",
+            "config/packages/validator.yaml"
+        ]
     },
     "symfony/var-dumper": {
         "version": "v5.3.10"
