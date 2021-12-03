@@ -9,8 +9,12 @@
          <p>{{ program.summary }}</p>
          <ul>
             {% for season in seasons %}
-               <li> <h4> {{ season.description }} </h4> Année de production  => {{ season.year }}</li>
-               <a href="{{ path('program_show_season',{programId : program.id, seasonId : season.id}) }}" > Voir la saison </a>
+               <a class="text-decoration-none text-black" href="{{ path('program_show_season',{program: program.id, season: season.id}) }}" >
+                  <li> <h4> {{ season.description }} </h4></li>
+               </a>
+                   Année de diffusion  => {{ season.year }}
+                  </li>
+
             {%  endfor %}
          </ul>
          <p>Catégorie : {{ program.category.name }}</p>

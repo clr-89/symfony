@@ -9,8 +9,10 @@
             <div>
                <h1 class="my-4"> {{ season.description }}</h1>
                 {% for episode in episodes %}
-                <h3>Episode {{ episode.number }} => {{ episode.title }}</h3>
-                <p>{{ episode.synopsis }}</p>
+                <a class= "text-decoration-none text-black" href="{{ path("program_episode_show", { program: program.id, season: season.id , episode: episode.id}) }}">
+                    <p>Episode {{ episode.number }} => {{ episode.title }}</p>
+                </a>
+
                 {% endfor %}
             </div>
     </div>
