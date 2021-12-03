@@ -6,10 +6,8 @@
 
         {% for category in categories %}
             <div class="serie mb-4">
-                <h2>{{ loop.index }} / - Catégorie : </h2>
-                <p>{{ category.name }}</p>
-                <a href="/category/{{category.name}}">Voir la catégorie {{ category.name }}</a>
-
+                <h2>{{ loop.index }} /{{ category.name }} </h2>
+                <a href="/category/{{category.name}}">Voir la catégorie </a>
             </div>
         {% else %}
             Aucune catégorie trouvée.

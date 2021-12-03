@@ -33,7 +33,7 @@ class CategoryController extends AbstractController
 
     public function show(string $categoryName): Response
     {
-            $category= $this->getDoctrine()
+        $category= $this->getDoctrine()
             ->getRepository(Category::class)
             ->findOneBy(['name' => $categoryName]);
 
