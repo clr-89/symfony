@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="d-flex justify-content-center m-4">
+        {{ form_start(form) }}
+        <h2 class="mb-5"> Ajouter une série</h2>
+        {{ form_widget(form) }}
+        <button class="mt-5" type="submit"> Ajouter une série</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
