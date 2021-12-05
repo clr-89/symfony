@@ -16,6 +16,19 @@ use Symfony\Component\HttpFoundation\Request;
 
 class CategoryController extends AbstractController
 {
+
+    /**
+     * @Route("/", name="index")
+     */
+    public function index(): Response
+    {
+        $categories = $this->getDoctrine()
+        ->getRepository(Category::class)
+        ->findAll();
+        return $this->render('category/index.html.twig', [
+            'categories' => $categories,
+        ]);
+    }
     /**
      * @Route("/new", name="new")
      */
@@ -33,18 +46,6 @@ class CategoryController extends AbstractController
         }
         return $this->render('category/new.html.twig', [
             "form" => $form->createView(),
-        ]);
-    }
-    /**
-     * @Route("/", name="index")
-     */
-    public function index(): Response
-    {
-        $categories = $this->getDoctrine()
-        ->getRepository(Category::class)
-        ->findAll();
-        return $this->render('category/index.html.twig', [
-            'categories' => $categories,
         ]);
     }
     /**

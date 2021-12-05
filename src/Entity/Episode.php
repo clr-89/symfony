@@ -38,6 +38,7 @@ class Episode
      */
     private $season;
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,4 +91,5 @@ class Episode
 
         return $this;
     }
+
 }

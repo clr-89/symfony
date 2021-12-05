@@ -12,8 +12,10 @@
                 <a class= "text-decoration-none text-black" href="{{ path("program_episode_show", { program: program.id, season: season.id , episode: episode.id}) }}">
                     <p>Episode {{ episode.number }} => {{ episode.title }}</p>
                 </a>
-
                 {% endfor %}
+                <div class="mt-2">
+                <a href="{{ path('episode_new', { program: program.id, season: season.id}) }}"> => Ajouter un épisode à la série</a>
+            </div>
             </div>
     </div>
 

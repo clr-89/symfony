@@ -14,8 +14,10 @@
                </a>
                    Année de diffusion  => {{ season.year }}
                   </li>
-
             {%  endfor %}
+             <div class="mt-2">
+                 <a href="{{ path('season_new', {program : program.id}) }}"> => Ajouter une saison à la série</a>
+             </div>
          </ul>
          <p>Catégorie : {{ program.category.name }}</p>
       </div>

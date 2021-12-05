@@ -117,7 +117,6 @@ class Season
             $this->episodes[] = $episode;
             $episode->setSeason($this);
         }
-
         return $this;
     }
 
