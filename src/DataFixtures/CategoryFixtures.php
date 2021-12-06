@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Category;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 
 class CategoryFixtures extends \Doctrine\Bundle\FixturesBundle\Fixture
 {
@@ -25,6 +26,7 @@ class CategoryFixtures extends \Doctrine\Bundle\FixturesBundle\Fixture
             $category = new Category();
             $category->setName($categoryName);
             $manager->persist($category);
+            $this->addReference('category_' . $key, $category);
         }
         $manager->flush();
 
