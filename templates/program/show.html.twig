@@ -9,7 +9,7 @@
          <p>{{ program.summary }}</p>
          <ul>
             {% for season in seasons %}
-               <a class="text-decoration-none text-black" href="{{ path('program_show_season',{program: program.id, season: season.id}) }}" >
+               <a class="text-decoration-none text-black" href="{{ path('program_show_season',{slugi: program.slugi, season: season.id}) }}" >
                   <li> <h4> {{ season.description }} </h4></li>
                </a>
                    Année de diffusion  => {{ season.year }}

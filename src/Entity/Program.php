@@ -68,6 +68,12 @@ class Program
      */
     private $actors;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slugi;
+
+
     public function __construct()
     {
         $this->seasons = new ArrayCollection();
@@ -206,5 +212,18 @@ class Program
 
         return $this;
     }
+
+    public function getSlugi(): ?string
+    {
+        return $this->slugi;
+    }
+
+    public function setSlugi(string $slugi): self
+    {
+        $this->slugi = $slugi;
+
+        return $this;
+    }
+
 
 }
