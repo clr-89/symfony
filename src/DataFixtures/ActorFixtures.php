@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Actor;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
 class ActorFixtures extends Fixture

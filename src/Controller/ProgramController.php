@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use App\Service\Slug;
 
 /**
  * @Route("/program", name="program_")
@@ -37,13 +38,15 @@ class ProgramController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstr
     /**
      * @Route("/new", name="new")
      */
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, Slug $slug): Response
     {
         $program = new Program();
         $form = $this->createForm(ProgramType::class, $program);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
+            $slugi = $slug->generate($program->getTitle());
+            $program->setSlugi($slugi);
             $entityManager->persist($program);
             $entityManager->flush();
             return $this->redirectToRoute('program_index');
@@ -54,7 +57,7 @@ class ProgramController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstr
     }
 
      /**
-     ** @Route("/{program}", name="show")
+     ** @Route("/{slugi}", name="show")
       */
 
     public function show(Program $program): Response
@@ -65,7 +68,7 @@ class ProgramController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstr
 
         if (!$program) {
             throw $this->createNotFoundException(
-                'No program with id : '.$program.' found in program\'s table.'
+                'No program with id : '.$program->getTitle().' found in program\'s table.'
             );
         }
         return $this->render('program/show.html.twig', [
@@ -74,7 +77,7 @@ class ProgramController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstr
         ]);
     }
     /**
-     * @Route("/{program}/seasons/{season}", name="show_season")
+     * @Route("/{slugi}/seasons/{season}", name="show_season")
      */
     public function showSeason(Program $program, Season $season): Response
     {
@@ -88,7 +91,7 @@ class ProgramController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstr
             'episodes'  =>  $episodes]);
     }
     /**
-     * @Route("/{program}/seasons/{season}/episode/{episode}", name="episode_show")
+     * @Route("/{slugi}/seasons/{season}/episode/{episode}", name="episode_show")
      */
     public function showEpisode(Program $program, Season $season, Episode $episode): Response
     {
